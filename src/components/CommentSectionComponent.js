@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-
-class CommentSection extends Component{
+import React from 'react';
 
 	// renderRating(p) {
 	// 	let ratingSection = null;
@@ -9,13 +7,17 @@ class CommentSection extends Component{
 	// 	}
 	// 	return ratingSection;
 	// }
-	render(){
-		const commentSection = this.props.info.comments.map((singleComment) => {
+	const CommentSection = (props) =>{
+		const commentSection = props.comments.map((singleComment) => {
 			return(
 				<li className="list-group-item">
 					<div key={singleComment.id}>
 						<div>{singleComment.comment}</div>
-						<div className="m-2">--{singleComment.author}, {singleComment.date}</div>
+						<div className="m-2">--{singleComment.author}, {new Intl.DateTimeFormat('en-US', {
+							year: 'numeric', 
+							month: 'short', 
+							day: '2-digit'}).format(new Date(Date.parse(singleComment.date)))}
+						</div>
 					</div>
 				</li>
 			);
@@ -29,6 +31,5 @@ class CommentSection extends Component{
 			</div>
 		);
 	}
-}
 
 export default CommentSection;
