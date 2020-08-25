@@ -7,28 +7,38 @@ import React from 'react';
 	// 	}
 	// 	return ratingSection;
 	// }
-	const CommentSection = (props) =>{
-		const commentSection = props.comments.map((singleComment) => {
-			return(
-				<li className="list-group-item">
-					<div key={singleComment.id}>
-						<div>{singleComment.comment}</div>
-						<div className="m-2">--{singleComment.author}, {new Intl.DateTimeFormat('en-US', {
-							year: 'numeric', 
-							month: 'short', 
-							day: '2-digit'}).format(new Date(Date.parse(singleComment.date)))}
-						</div>
-					</div>
-				</li>
-			);
-		});
+
+	function RenderComments({comment}){
 		return(
 			<div>
+				<div>{comment.comment}</div>
+				<div className="m-2">--{comment.author}, {new Intl.DateTimeFormat('en-US', {
+					year: 'numeric', 
+					month: 'short', 
+					day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
+				</div>
+			</div>
+			
+		);
+	}
+	
+
+	const CommentSection = (props) =>{
+		const allComments = props.comments.map((comment) =>{
+			return(
+				<li className="list-group-item">
+					<RenderComments comment={comment}/>
+				</li>
+			);
+		})
+		
+		return(
+			<React.Fragment>
 				<h4>Comments</h4>
 				<ul className="list-group list-group-flush">
-					{commentSection}
+					{allComments}
 				</ul>
-			</div>
+			</React.Fragment>
 		);
 	}
 
