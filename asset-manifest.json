@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Hong-Kong-React/static/css/main.c7acba8b.chunk.css",
+    "main.js": "/Hong-Kong-React/static/js/main.fc2ea535.chunk.js",
+    "main.js.map": "/Hong-Kong-React/static/js/main.fc2ea535.chunk.js.map",
+    "runtime-main.js": "/Hong-Kong-React/static/js/runtime-main.971a49f6.js",
+    "runtime-main.js.map": "/Hong-Kong-React/static/js/runtime-main.971a49f6.js.map",
+    "static/css/2.34b9287e.chunk.css": "/Hong-Kong-React/static/css/2.34b9287e.chunk.css",
+    "static/js/2.20618321.chunk.js": "/Hong-Kong-React/static/js/2.20618321.chunk.js",
+    "static/js/2.20618321.chunk.js.map": "/Hong-Kong-React/static/js/2.20618321.chunk.js.map",
+    "index.html": "/Hong-Kong-React/index.html",
+    "precache-manifest.546549764536112ecd7ff609ed3481f8.js": "/Hong-Kong-React/precache-manifest.546549764536112ecd7ff609ed3481f8.js",
+    "service-worker.js": "/Hong-Kong-React/service-worker.js",
+    "static/css/2.34b9287e.chunk.css.map": "/Hong-Kong-React/static/css/2.34b9287e.chunk.css.map",
+    "static/css/main.c7acba8b.chunk.css.map": "/Hong-Kong-React/static/css/main.c7acba8b.chunk.css.map",
+    "static/js/2.20618321.chunk.js.LICENSE.txt": "/Hong-Kong-React/static/js/2.20618321.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/Hong-Kong-React/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.971a49f6.js",
+    "static/css/2.34b9287e.chunk.css",
+    "static/js/2.20618321.chunk.js",
+    "static/css/main.c7acba8b.chunk.css",
+    "static/js/main.fc2ea535.chunk.js"
+  ]
+}
