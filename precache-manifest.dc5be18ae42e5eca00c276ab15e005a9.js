@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "70faa58046c8887c5ba6b890ada0688b",
+    "revision": "752d1c886aead01ab5ef8ffdbee6333b",
     "url": "/Hong-Kong-React/index.html"
   },
   {
-    "revision": "021a8d881398b97ad108",
+    "revision": "2550ce2bceb5265cf0b3",
     "url": "/Hong-Kong-React/static/css/2.34b9287e.chunk.css"
   },
   {
-    "revision": "c1e32a8964ba4e67acb3",
-    "url": "/Hong-Kong-React/static/css/main.c7acba8b.chunk.css"
+    "revision": "fc68be903ea92e9bb81e",
+    "url": "/Hong-Kong-React/static/css/main.80dfa40f.chunk.css"
   },
   {
-    "revision": "021a8d881398b97ad108",
-    "url": "/Hong-Kong-React/static/js/2.20618321.chunk.js"
+    "revision": "2550ce2bceb5265cf0b3",
+    "url": "/Hong-Kong-React/static/js/2.255e27ff.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/Hong-Kong-React/static/js/2.20618321.chunk.js.LICENSE.txt"
+    "url": "/Hong-Kong-React/static/js/2.255e27ff.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c1e32a8964ba4e67acb3",
-    "url": "/Hong-Kong-React/static/js/main.fc2ea535.chunk.js"
+    "revision": "fc68be903ea92e9bb81e",
+    "url": "/Hong-Kong-React/static/js/main.aab23aca.chunk.js"
   },
   {
     "revision": "9d1e822c2e0e690673f5",

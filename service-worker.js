@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Hong-Kong-React/precache-manifest.546549764536112ecd7ff609ed3481f8.js"
+  "/Hong-Kong-React/precache-manifest.dc5be18ae42e5eca00c276ab15e005a9.js"
 );
 
 self.addEventListener('message', (event) => {
