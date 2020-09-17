@@ -1,5 +1,4 @@
 {
-  "homepage": "https://leleka14.github.io/Hong-Kong-React/",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -10,7 +9,9 @@
     "bootstrap": "^4.5.1",
     "bootstrap-social": "^5.1.1",
     "font-awesome": "^4.7.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
+    "react-animation-components": "^3.0.0",
     "react-dom": "^16.13.1",
     "react-popper": "^2.2.3",
     "react-rating-stars-component": "^2.2.0",
@@ -19,6 +20,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
     "react-star-ratings": "^2.3.0",
+    "react-transition-group": "^4.4.1",
     "reactstrap": "^8.5.1",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
@@ -28,9 +30,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

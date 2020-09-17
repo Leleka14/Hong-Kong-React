@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import ReactStars from "react-rating-stars-component";
 import { Loading } from './LoadingComponent.js';
+import { baseUrl } from '../shared/baseUrl';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -13,13 +15,19 @@ const RenderDish = ({dish}) =>{
 	if(dish != null){
 		return (
 			<div key={dish.id}>
-				<Card>
-					<CardImg width="100%" src={dish.image} alt={dish.name}/>
-					<CardBody>
-						<CardTitle>{dish.name}</CardTitle>
-						<CardText>{dish.description}</CardText>
-					</CardBody>
-				</Card>
+				<FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.5) translateY(-50%)'
+                }}>
+					<Card>
+						<CardImg width="100%" src={baseUrl + dish.image} alt={dish.name}/>
+						<CardBody>
+							<CardTitle>{dish.name}</CardTitle>
+							<CardText>{dish.description}</CardText>
+						</CardBody>
+					</Card>
+				</FadeTransform>
 			</div>
 		);
 	}
@@ -30,31 +38,35 @@ const RenderDish = ({dish}) =>{
 
 
 	
-const RenderComments = ({comments, addComment, dishId}) =>{
+const RenderComments = ({comments, postComment, dishId}) =>{
 	if(comments != null){
 		return(
 			<React.Fragment>
 				<h4>Comments</h4>
 				<ul className="list-group list-group-flush">
-				{comments.map((comment) =>{
-					return(
-						<li className="list-group-item">
-							<ReactStars
-								count={comment.rating}
-								size={24}
-								edit={false}
-							/>
-							<div>{comment.comment}</div>
-							<h6 className="m-2">--{comment.author}, {new Intl.DateTimeFormat('en-US', {
-								year: 'numeric', 
-								month: 'short', 
-								day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
-							</h6>
-						</li>
-					);
-				})}		
+					<Stagger in>
+						<Fade in>
+						{comments.map((comment) =>{
+							return(
+								<li className="list-group-item">
+									<ReactStars
+										count={comment.rating}
+										size={24}
+										edit={false}
+									/>
+									<div>{comment.comment}</div>
+									<h6 className="m-2">--{comment.author}, {new Intl.DateTimeFormat('en-US', {
+										year: 'numeric', 
+										month: 'short', 
+										day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
+									</h6>
+								</li>
+							);
+						})}		
+						</Fade>
+					</Stagger>
 				</ul>
-				<CommentForm addComment={addComment} dishId={dishId}/>
+				<CommentForm postComment={postComment} dishId={dishId}/>
 			</React.Fragment>
 		)
 	}
@@ -74,7 +86,7 @@ const CommentForm = (props) => {
 	const handleSubmit = (values) =>{
 		toggleModal();
 		console.log(props.dishId, values)
-		props.addComment(props.dishId, values.rating, values.author, values.comment)
+		props.postComment(props.dishId, values.rating, values.author, values.comment)
 	}
 	return(
 		<React.Fragment>
@@ -150,7 +162,7 @@ const DetailedDish = (props) =>{
 		return (
 			<div className="container">
 				<div className="row">
-					<h4>{props.erroeMessage}</h4>
+					<h4>{props.errorMessage}</h4>
 				</div>
 			</div>
 		)
@@ -187,7 +199,7 @@ const DetailedDish = (props) =>{
 						</div>
 						<div className="col-12 col-md-5 m-1">
 							<RenderComments comments={props.comments}
-							addComment={props.addComment}
+							postComment={props.postComment}
 							dishId={props.dish.id}/>
 						</div>
 					</div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Button, Label, Col, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Control, Form, Errors, ACtions } from 'react-redux-form';
+import { Control, Form, Errors } from 'react-redux-form';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -12,81 +12,10 @@ const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val
 
 function Contact(props) {
 
-    // const [firstname, setFirstname] = useState('');
-    // const [lastname, setLastname] = useState('');
-    // const [telnum, setTelnum] = useState('');
-    // const [email, setEmail] = useState('');
-    // const [agree, setAgree] = useState(false);
-    // const [contactType, setContactType] = useState('Tel.');
-    // const [message, setMessage] = useState('');
-
-    // const [state, setState] = useState({
-    //     firstname: '', 
-    //     lastname: '', 
-    //     telnum: '', 
-    //     email: '', 
-    //     agree: false, 
-    //     contactType: 'Tel.', 
-    //     message: '', 
-    //     touched: {
-    //         firstname: false,
-    //         lastname: false,
-    //         telnum: false,
-    //         email: false
-    // }});
-
-    // const handleInputChange = (event) =>{
-    //     const target = event.target;
-    //     const value = target.type === 'checkbox' ? target.checked : target.value;
-    //     const name = target.name;
-    //     setState(prevState => {
-    //         return{ ...prevState, [name]: value}
-    //     });
-    // }
-
     const handleSubmit = (values) =>{
-        console.log("current state: " + JSON.stringify(values));
+        props.postFeedback(values.firstname, values.lastname, values.telnum, values.email, values.agree, values.contactType, values.message);
         props.resetFeedbackForm();
     }
-
-    // const handleBlur = (field) => (evt) =>{
-    //     setState(prevState => {
-    //         return{ ...prevState, touched: {...state.touched, [field]: true}}
-    //     })
-    // }
-
-    // const validate = (firstname, lastname, telnum, email) =>{
-    //     const errors = {
-    //         firstname: '', 
-    //         lastname: '', 
-    //         telnum: '', 
-    //         email: ''
-    //     }
-
-    //     if(state.touched.firstname && firstname.length < 3){
-    //         errors.firstname = 'First Name should contain more than 3 characters';
-    //     }
-    //     else if(state.touched.firstname && firstname.length > 20){
-    //         errors.firstname = 'First Name should contain less than 20 characters';
-    //     }
-
-    //     if(state.touched.lastname && lastname.length < 3){
-    //         errors.lastname = 'Last Name should contain more than 3 characters';
-    //     }
-    //     else if(state.touched.lastname && lastname.length > 20){
-    //         errors.lastname = 'Last Name should contain less than 20 characters';
-    //     }
-
-    //     if (state.touched.telnum && isNaN(telnum)){
-    //         errors.telnum = 'Tel. Number should contain only numbers';
-    //     }
-    //     if(state.touched.email && email.split('').filter(x => x === '@').length !== 1){
-    //         errors.email = 'Email should contain @';
-    //     }
-    //     return errors;
-    // }
-
-    // const errors = validate(state.firstname, state.lastname, state.telnum, state.email);
 
     return(
         <div className="container">
@@ -127,7 +56,7 @@ function Contact(props) {
                 <div className="col-12 col-sm-11 offset-sm-1">
                     <div className="btn-group" role="group">
                         <a role="button" className="btn btn-primary" href="tel:+85212345678"><i className="fa fa-phone"></i> Call</a>
-                        <a role="button" className="btn btn-info"><i className="fa fa-skype"></i> Skype</a>
+                        <a role="button" className="btn btn-info" href="google.com"><i className="fa fa-skype"></i> Skype</a>
                         <a role="button" className="btn btn-success" href="mailto:confusion@food.net"><i className="fa fa-envelope-o"></i> Email</a>
                     </div>
                 </div>
